@@ -34,6 +34,9 @@ class Point:
       return Point(self.row%other.row,self.col%other.col)
     else:
       raise Exception(f"{type(other)} is not a valid type to multiply to a point")
+      
+  def __hash__(self):
+    return hash((self.row, self.col))
 
   def __eq__(self,otherPoint):
     return self.row == otherPoint.row and self.col == otherPoint.col
